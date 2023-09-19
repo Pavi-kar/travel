@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        .outer{
+        width:350px;
+        height:350px;
+        top:22%;
+        left:35%;
+        position:absolute;
+        background: white;
+        color:rgb(158, 16, 52);
+         }
+         .outer h2{
+            background:rgb(158, 16, 52);
+            text-align:center;
+            color:#fff;
+            margin:0;
+            font-family:sans-serif;
+            padding:6px;
+            height:30px;
+         }
+         .inner p{
+         font-family:sans-serif;
+         font-size:20px;
+         margin-left:20px;
+         font-weight:bold;
+         }
+         .inner input{
+         width:250px;
+         border: 1px solid;
+         outline:none;
+         margin-left:20px;
+         border-radius:4px;
+         height:20px;
+         padding:5px;
+         }
+         .inner button{
+         width:175px;
+         border-radius:20px;
+         height:30px;
+         margin-left:80px;
+         background:rgb(158, 16, 52);
+         color:white;
+         font-size:18px;
+         padding:5px;
+
+         }
+    </style>
+
+</head>
+<body style="background:grey">
+    <div class="outer">
+        <h2>LOGIN FORM</h2>
+        <div class="inner">
+             <form action="login" method="POST">
+                 <p>User Name</p>
+                    {% csrf_token %}
+                 <input type="text" name="username" placeholder="Username">
+                 <p>Password</p>
+                 <input type="password" name="password" placeholder="******"><br><br><br>
+                 <button type="submit">Login</button>
+             </form>
+        </div>
+
+
+    </div>
+<div style="margin-left:40%; margin-top:500px; ">
+        {% for msg in messages %}
+        <h2>{{msg}}</h2>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
